@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 4.12</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+    <h1>Лабораторна робота 4.12</h1>
+    <h3> Завдання 1 </h3>
+    <p> Уточнити контроль коректності імені користувача на ваш розсуд. </p>
+    <form name="form1">
+        <input type="text" name="Name" placeholder="Введіть своє ім'я:" size="30">
+        <input type="button" value="Визначити" onclick="correctName()">
+        <input type="reset" value="Перевизначити">
+    </form>
+
+    <script>
+        function correctName(){
+            var res = /^[a-zA-Zа-яА-ЯіІ' ]+$/.test(form1.Name.value);
+            if(res) alert("Ім'я '"+form1.Name.value+"' вірне!");
+			else alert("Ім'я '"+form1.Name.value+"' невірне! Будь ласка, введіть дані ще раз!");
+        }
+    </script>
+
+    <h3> Завдання 2 </h3>
+    <p> Уточнити контроль коректності адреси електронної пошти на ваш
+            розсуд.  </p>
+
+    <form name="form2">
+            <input type="text" name="email" placeholder="Введіть свою пошту:" size="30">
+            <input type="button" value="Визначити" onclick="correctEmail()">
+            <input type="reset" value="Перевизначити">
+    </form>
+
+    <script>
+        function correctEmail(){
+            var res = /^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/.test(form2.email.value);
+
+				if(res) alert("Email '"+form2.email.value+"' вірний!");
+				else alert("Email '"+form2.email.value+"' невірний! Будь ласка, введіть дані ще раз!");
+        }
+    </script>
+
+    <h3> Завдання 3 </h3>
+    <p>  Уточнити контроль коректності телефонного номеру на ваш розсуд.  </p>
+
+    <form name="form3">
+            <input type="text" name="telephone" placeholder="Введіть свій телефон:" size="30">
+            <input type="button" value="Визначити" onclick="correctTelephone()">
+            <input type="reset" value="Перевизначити">
+    </form>
+
+    <script>
+            function correctTelephone(){
+                var res = /^(\+38)?0[0-9]{9}$/.test(form3.telephone.value);
+
+				if(res) alert("Телефон '"+form3.telephone.value+"' вірний!");
+				else alert("Телефон '"+form3.telephone.value+"' невірний! Будь ласка, введіть дані ще раз!");
+            }
+    </script>
+
+    <div>
+        <a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+        <a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+        <a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+        <a href="lab10(JS).html">	Lab10	</a><a href="lab11(JS).html">   Lab11   </a><a href="lab12(JS).html">	Lab12	</a>
+    </div>
+
+</body>
+</html>

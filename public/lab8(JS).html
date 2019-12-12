@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<html>
+<head><title>Lab 4.8</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+<h1>Лабораторна робота 4.8</h1>
+<h3> Завдання 1 </h3>
+<p>Написати програму, яка "перевертає" задане натуральне число.</p>
+
+<form name="form1">
+Введіть число: <input type="text" name="chislo" placeholder="Введіть число"><br>
+<input type="button" value="Вирахувати" onclick="Reverse()">
+<input type="text" name="res" placeholder="Результат">
+</form>
+
+<script>
+function Reverse(){
+  var result = 0;
+  var digit = form1.chislo.value;
+  while(digit>1){
+    result=10*result + Math.floor(digit % 10);
+    digit /= 10;
+  }
+  form1.res.value=result;
+}
+</script>
+
+<h3> Завдання 2 </h3>
+<p>Написати сценарій визначення кількості "щасливих" шестизначних
+автобусних квитків (в номерах яких сума перших трьох цифр дорівнює сумі
+трьох останніх).</p>
+
+<form name="form2">
+<input type="button" value="Визначити" onclick="lucky()">
+<input type="text" name="res" placeholder="Кількість щасливих білетів">
+</form>
+
+
+<script>
+function lucky(){
+  var digits = {}, i, tmp;
+  for(var i = 0; i < 1000; i++){
+    tmp = i % 10 + ((i % 100) - (i % 10)) / 10 + (i / 100) ^ 0;
+    if (digits[tmp] === undefined){
+			digits[tmp] = 1;
+		}
+    else{
+			digits[tmp] += 1;
+		}
+  }
+  tmp = 0;
+				for (i in digits) {
+					tmp += digits[i] * digits[i];
+				}
+      form2.res.value = tmp;
+}
+</script>
+
+<h3> Завдання 3 </h3>
+<p>Написати програму, що визначає всі дільники заданого натурального
+числа.</p>
+
+<form name="form3">
+<input type="text" name="number" placeholder="Введіть число">
+<input type="button" value="Визначити" onclick="dilnik()">
+<input type="text" name="res1" size="50">
+</form>
+
+<script>
+function dilnik(){
+  var n = form3.number.value;
+  var deliteli = "";
+  for(var i = n; i > 0; i--){
+    if(n % i == 0){
+      deliteli = deliteli + " " + i;
+    }
+  }
+  form3.res1.value = deliteli;
+}
+</script>
+
+<div>
+<a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+<a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+<a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+</div>
+
+</body>
+</html>

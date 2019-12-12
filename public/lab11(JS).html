@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 4.11</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+    <h1>Лабораторна робота 4.11</h1>
+    <h3> Завдання 1 </h3>
+    <p> Створити мультиплікацію з використанням масива.</p>
+
+    <form name="form1">
+        <img src="runner1.jpg">
+        <input type="button" value="Анімувати" onclick="IMGarr()">
+        <input type="button" value="Зупинити" onclick="stop()">
+    </form>
+    
+    <script>
+        var array = new Array();
+        for(var i=0;i<2;i++){
+            array[i]=new Image(50,100);
+            array[i].src = "runner"+(i+1)+".jpg";
+        }
+
+        var p = -1;
+
+        function IMGarr(){
+            p++;
+            document.images[0].src = array[p].src;
+			setTimeout("IMGarr()",100);
+			if (p==1) p=-1;
+        }
+
+        function stop()
+        {
+            p = 2;
+        }
+    </script>
+
+    <h3> Завдання 2 </h3>
+    <p> Дано одномірний масив дійсних чисел. Написати сценарій визначення
+            кількості додатніх елементів масива. </p>
+
+    <form name="form2">
+        <input type="text" placeholder="Введіть числа (через пробіл): " size="40" name="numbers">
+        <input type="text" placeholder="Результат" name="res1">
+        <input type="button" value="Розрахувати" onclick="numbers1()">
+        <input type="reset" value="Обнулити">
+    </form>
+
+    <script>
+        function numbers1(){
+            var numbers = form2.numbers.value.split(" ");
+            var col = 0;
+            for(var i=0;i<numbers.length;i++){
+                if(numbers[i]>0){
+                    col++;
+                }
+            }
+            form2.res1.value = col;
+        }
+    </script>
+
+    <h3> Завдання 3 </h3>
+    <p> Дано одномірний масив дійсних чисел. Написати сценарій пошуку
+            максимального елемента в масиві. </p>
+    <form name="form3">
+        <input type="text" placeholder="Введіть числа (через пробіл): " size="40" name="numbers1">
+        <input type="text" placeholder="Результат" name="res2">
+        <input type="button" value="Розрахувати" onclick="max1()">
+        <input type="reset" value="Обнулити">
+    </form>
+
+    <script>
+        function max1(){
+            var numbers1 = form3.numbers1.value.split(" ");
+            var max = +numbers1[0];
+
+            for(var i=0; i<numbers1.length; i++){
+                if(max < +numbers1[i])
+                {
+                    max = +numbers1[i];
+                }
+            }
+
+            form3.res2.value = max;
+        }
+    </script>
+
+    <div>
+        <a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+        <a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+        <a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+        <a href="lab10(JS).html">	Lab10	</a><a href="lab11(JS).html">   Lab11   </a><a href="lab12(JS).html">	Lab12	</a>
+    </div>
+
+</body>
+</html>

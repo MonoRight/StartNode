@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab4.1</title>
+
+<style>
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
+</head>
+
+<body>
+<h1>Лабораторна робота 4.1</h1>
+<h3> Завдання 1 </h3>
+<p> Скласти сценарій обчислення площі круга за відомим радіусом. </p>
+<input class="radius" type="text" placeholder="Введіть радіус кола">
+<input class="buttom1" type="button" value="Розрахувати">
+<p class="result">Площа круга:</p>
+
+<script>
+
+var radius = document.querySelector('.radius');
+var buttom = document.querySelector('.buttom1');
+var resul = document.querySelector('.result');
+
+buttom.onclick = function(){
+  resul.textContent = "Площа круга: " + (Math.PI * +radius.value * +radius.value);
+}
+
+</script>
+
+<h3> Завдання 2 </h3>
+<p> Скласти сценарій обчислення гіпотенузи за відомими катетами. </p>
+<input class="katet1" type="text" placeholder="Введіть 1-ий катет">
+<input class="katet2" type="text" placeholder="Введіть 2-ий катет">
+<input class="but1" type="button" value="Розрахувати">
+<p class="result2">Гіпотенуза = </p>
+
+<script>
+
+var katet1 = document.querySelector('.katet1'),
+katet2 = document.querySelector('.katet2'),
+buttom1 = document.querySelector('.but1'),
+result = document.querySelector('.result2');
+
+buttom1.onclick = function(){
+  result.textContent = "Гіпотенуза = " + (Math.sqrt(katet1.value*katet1.value + katet2.value*katet2.value));
+}
+
+</script>
+
+<div>
+<a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+<a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+<a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+</div>
+
+</body>
+</html>

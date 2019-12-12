@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 4.2</title>
+
+<style>
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Лабораторна робота 4.2</h1>
+
+<script>
+  function square(X1,Y1,X2,Y2,X3,Y3) {
+    if(X1 && Y1 && X2 && Y2 && X3 && Y3){
+        var a = Math.sqrt((X1-X2)*(X1-X2)+(Y1-Y2)*(Y1-Y2));
+        var b = Math.sqrt((X1-X3)*(X1-X3)+(Y1-Y3)*(Y1-Y3));
+        var c = Math.sqrt((X2-X3)*(X2-X3)+(Y2-Y3)*(Y2-Y3));
+        var p = 0.5*(a+b+c);
+        var triangle = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+        document.form1.result.value = triangle;
+      }
+    else document.form1.result.value = "Не всі поля заповненні!";
+          }
+</script>
+
+<h3> Завдання 1 </h3>
+<p>  Написати сценарій обчислення площі трикутника (використати подію
+focus) за заданими координатами трьох точок на площині. </p>
+
+<form name="form1">
+  <p> Введіть координати першої точки:
+<input name="X1" type="text" placeholder="X1">
+<input name="Y1" type="text" placeholder="Y1">
+</p>
+<p> Введіть координати другої точки:
+<input name="X2" type="text" placeholder="X2">
+<input name="Y2" type="text" placeholder="Y2">
+</p>
+<p>Введіть координати третьої точки:
+<input name="X3" type="text" placeholder="X3">
+<input name="Y3" type="text" placeholder="Y3">
+</p>
+<p>Площа трикутника:
+  <input type="text" name="result" placeholder="Відповідь" onFocus="square(document.form1.X1.value, document.form1.Y1.value, document.form1.X2.value, document.form1.Y2.value, document.form1.X3.value, document.form1.Y3.value)">
+</p>
+</form>
+
+<h3> Завдання 2 </h3>
+
+<script>
+function length1(C1,C2){
+  document.form2.result.value = Math.sqrt(C1*C1+C2*C2);
+}
+</script>
+
+<p> Написати сценарій, який для точки, заданої координатами на площині,
+визначає відстань до початку координат (використати подію select).</p>
+
+<form name="form2">
+<p> Введіть координати точки:
+<input type="text" name="C1" placeholder="X1">
+<input type="text" name="C2" placeholder="Y1">
+</p>
+
+<p>Відстань:
+  <input type="text" name="result" value="Відповідь" onselect="length1(document.form2.C1.value, document.form2.C2.value)">
+</p>
+</form>
+
+<h3> Завдання 3 </h3>
+
+<script>
+function swap1(){
+  var temp = document.form3.zm1.value;
+  document.form3.zm1.value = document.form3.zm2.value;
+  document.form3.zm2.value = temp;
+}
+
+</script>
+
+<p>Написати сценарій, який обмінює місцями значення двох введених змінних (використати подію blur)</p>
+<form name="form3">
+<p>Введіть будь-які дві змінні:
+<input onblur="swap1()" type="text" name="zm1" placeholder="Змінна_1">
+<input onblur="swap1()" type="text" name="zm2" placeholder="Змінна_2">
+</p>
+
+<div>
+<a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+<a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+<a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+</div>
+
+</body>
+</html>

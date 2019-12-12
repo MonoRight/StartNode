@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 4.7</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    td{
+      height: 50px;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+<h1>Лабораторна робота 4.7</h1>
+<h3> Завдання 1 </h3>
+<p>Написати сценарій, який дозволяє вибрати для таблиці і її комірок або
+колір фону, або фонове зображення, або і те і інше. Передбачити можливість
+задання свого кольору фону для кожної комірки. </p>
+
+<form name="form1">
+Колір:
+  <select name="selectColorTable" size = "1" onchange="ChangeColorTable()">
+    <option value="white">White</option>
+    <option value="#3A01DF">Violet-Blue</option>
+    <option value="#FF4000">Red</option>
+    <option value="#81F7D8">Mint</option>
+    <option value="#FF00FF">Pink</option>
+    <option value="#FFBF00">Orange</option>
+  </select>
+Фото:
+  <select name="selectPhotoTable" size = "1" onchange="ChangePhotoTable()">
+    <option value="none">None </option>
+    <option value="first">First</option>
+    <option value="second">Second</option>
+    <option value="third">Third</option>
+    <option value="forth">Forth</option>
+    <option value="fifth">Fifth</option>
+  </select>
+
+  <input type="reset" value="Оновити">
+
+  <table class="table1" border="3" cellpadding="5" cellspacing="6" border-color="black" style="background-image: none; background-color: none">
+    <tr>
+      <td class="td1">
+        <select name="cellColor1" size="1" onchange="ChangeCellColor()">
+          <option value="white">White</option>
+          <option value="#3A01DF">Violet-Blue</option>
+          <option value="#FF4000">Red</option>
+          <option value="#81F7D8">Mint</option>
+          <option value="#FF00FF">Pink</option>
+          <option value="#FFBF00">Orange</option>
+        </select>
+        <input type="text" name="cellColor11" placeholder="Введіть колір" onFocus="PersonalColor()">
+      </td>
+      <td class="td2">
+        <select name="cellColor2" size="1" onchange="ChangeCellColor()">
+          <option value="white">White</option>
+          <option value="#3A01DF">Violet-Blue</option>
+          <option value="#FF4000">Red</option>
+          <option value="#81F7D8">Mint</option>
+          <option value="#FF00FF">Pink</option>
+          <option value="#FFBF00">Orange</option>
+        </select>
+        <input type="text" name="cellColor12" placeholder="Введіть колір" onFocus="PersonalColor()">
+       </td>
+      <td class="td3">
+        <select name="cellColor3" size="1" onchange="ChangeCellColor()">
+          <option value="white">White</option>
+          <option value="#3A01DF">Violet-Blue</option>
+          <option value="#FF4000">Red</option>
+          <option value="#81F7D8">Mint</option>
+          <option value="#FF00FF">Pink</option>
+          <option value="#FFBF00">Orange</option>
+        </select>
+        <input type="text" name="cellColor13" placeholder="Введіть колір" onFocus="PersonalColor()">
+      </td>
+    </tr>
+    <tr>
+      <td class="td4">
+        <select name="cellColor4" size="1" onchange="ChangeCellColor()">
+          <option value="white">White</option>
+          <option value="#3A01DF">Violet-Blue</option>
+          <option value="#FF4000">Red</option>
+          <option value="#81F7D8">Mint</option>
+          <option value="#FF00FF">Pink</option>
+          <option value="#FFBF00">Orange</option>
+        </select>
+        <input type="text" name="cellColor14" placeholder="Введіть колір" onFocus="PersonalColor()">
+      </td>
+      <td class="td5">
+        <select name="cellColor5" size="1" onchange="ChangeCellColor()">
+          <option value="white">White</option>
+          <option value="#3A01DF">Violet-Blue</option>
+          <option value="#FF4000">Red</option>
+          <option value="#81F7D8">Mint</option>
+          <option value="#FF00FF">Pink</option>
+          <option value="#FFBF00">Orange</option>
+        </select>
+        <input type="text" name="cellColor15" placeholder="Введіть колір" onFocus="PersonalColor()">
+      </td>
+      <td class="td6">
+        <select name="cellColor6" size="1" onchange="ChangeCellColor()">
+          <option value="white">White</option>
+          <option value="#3A01DF">Violet-Blue</option>
+          <option value="#FF4000">Red</option>
+          <option value="#81F7D8">Mint</option>
+          <option value="#FF00FF">Pink</option>
+          <option value="#FFBF00">Orange</option>
+        </select>
+        <input type="text" name="cellColor16" placeholder="Введіть колір" onFocus="PersonalColor()">
+      </td>
+    </tr>
+    <tr>
+      <td class="td7">
+        <select name="cellColor7" size="1" onchange="ChangeCellColor()">
+          <option value="white">White</option>
+          <option value="#3A01DF">Violet-Blue</option>
+          <option value="#FF4000">Red</option>
+          <option value="#81F7D8">Mint</option>
+          <option value="#FF00FF">Pink</option>
+          <option value="#FFBF00">Orange</option>
+        </select>
+        <input type="text" name="cellColor17" placeholder="Введіть колір" onFocus="PersonalColor()">
+      </td>
+      <td class="td8">
+        <select name="cellColor8" size="1" onchange="ChangeCellColor()">
+          <option value="white">White</option>
+          <option value="#3A01DF">Violet-Blue</option>
+          <option value="#FF4000">Red</option>
+          <option value="#81F7D8">Mint</option>
+          <option value="#FF00FF">Pink</option>
+          <option value="#FFBF00">Orange</option>
+        </select>
+        <input type="text" name="cellColor18" placeholder="Введіть колір" onFocus="PersonalColor()">
+      </td>
+      <td class="td9">
+        <select name="cellColor9" size="1" onchange="ChangeCellColor()">
+          <option value="white">White</option>
+          <option value="#3A01DF">Violet-Blue</option>
+          <option value="#FF4000">Red</option>
+          <option value="#81F7D8">Mint</option>
+          <option value="#FF00FF">Pink</option>
+          <option value="#FFBF00">Orange</option>
+        </select>
+        <input type="text" name="cellColor19" placeholder="Введіть колір" onFocus="PersonalColor()">
+      </td>
+    </tr>
+  </table>
+</form>
+
+<script>
+var td1 = document.querySelector(".td1");
+var td2 = document.querySelector(".td2");
+var td3 = document.querySelector(".td3");
+var td4 = document.querySelector(".td4");
+var td5 = document.querySelector(".td5");
+var td6 = document.querySelector(".td6");
+var td7 = document.querySelector(".td7");
+var td8 = document.querySelector(".td8");
+var td9 = document.querySelector(".td9");
+var a = document.querySelector(".table1");
+function ChangeColorTable(){
+  a.style.backgroundColor = form1.selectColorTable.value;
+}
+
+function ChangePhotoTable(){
+  if(document.form1.selectPhotoTable.value == "none"){
+    a.style.backgroundImage = "none";
+  }
+  if(document.form1.selectPhotoTable.value == "first"){
+    a.style.backgroundImage = "url(pastel.jpg)";
+  }
+  if(document.form1.selectPhotoTable.value == "second"){
+    a.style.backgroundImage = "url(2.jpg)";
+  }
+  if(document.form1.selectPhotoTable.value == "third"){
+    a.style.backgroundImage = "url(4.jpg)";
+  }
+  if(document.form1.selectPhotoTable.value == "forth"){
+    a.style.backgroundImage = "url(3.jpg)";
+  }
+  if(document.form1.selectPhotoTable.value == "fifth"){
+    a.style.backgroundImage = "url(1.jpg)";
+  }
+}
+
+function ChangeCellColor(){
+  if(form1.cellColor1.value != ""){
+    td1.style.backgroundColor = form1.cellColor1.value;
+  }
+  if(form1.cellColor2.value != ""){
+    td2.style.backgroundColor = form1.cellColor2.value;
+  }
+  if(form1.cellColor3.value != ""){
+    td3.style.backgroundColor = form1.cellColor3.value;
+  }
+  if(form1.cellColor4.value != ""){
+    td4.style.backgroundColor = form1.cellColor4.value;
+  }
+  if(form1.cellColor5.value != ""){
+    td5.style.backgroundColor = form1.cellColor5.value;
+  }
+  if(form1.cellColor6.value != ""){
+    td6.style.backgroundColor = form1.cellColor6.value;
+  }
+  if(form1.cellColor7.value != ""){
+    td7.style.backgroundColor = form1.cellColor7.value;
+  }
+  if(form1.cellColor8.value != ""){
+    td8.style.backgroundColor = form1.cellColor8.value;
+  }
+  if(form1.cellColor9.value != ""){
+    td9.style.backgroundColor = form1.cellColor9.value;
+  }
+}
+
+function PersonalColor(){
+  if(form1.cellColor11.value != ""){
+    td1.style.backgroundColor = form1.cellColor11.value;
+  }
+  if(form1.cellColor12.value != ""){
+    td2.style.backgroundColor = form1.cellColor12.value;
+  }
+  if(form1.cellColor13.value != ""){
+    td3.style.backgroundColor = form1.cellColor13.value;
+  }
+  if(form1.cellColor14.value != ""){
+    td4.style.backgroundColor = form1.cellColor14.value;
+  }
+  if(form1.cellColor15.value != ""){
+    td5.style.backgroundColor = form1.cellColor15.value;
+  }
+  if(form1.cellColor16.value != ""){
+    td6.style.backgroundColor = form1.cellColor16.value;
+  }
+  if(form1.cellColor17.value != ""){
+    td7.style.backgroundColor = form1.cellColor17.value;
+  }
+  if(form1.cellColor18.value != ""){
+    td8.style.backgroundColor = form1.cellColor18.value;
+  }
+  if(form1.cellColor19.value != ""){
+  td9.style.backgroundColor = form1.cellColor19.value;
+  }
+}
+</script>
+
+<h3>Завдання 2</h3>
+<p>Написати сценарій, яки обчислить вартість майбутньої покупки для
+заданого списку продуктів, ціни за одиницю товару і кількість екземплярів.</p>
+
+<form name="form2">
+<div style="border: 1px solid black; padding: 10px;">
+<p>1) Колонка JBL MaxFlip 3 - 4800 грн.</p>
+<p>2) Окуляри D&G - 10000 грн.</p>
+<p>3) Тренч Dastish Fantastish - 4500 грн. </p>
+<p>4) Кросівки PUMA  - 3500 грн.</p>
+<p>5) Навушники SteelSeries - 2500 грн.</p>
+</div>
+
+<select name="Price" size=1 onchange="ListPrice()">
+<option value="4800">Колонка JBL MaxFlip 3</option>
+<option value="10000">Окуляри D&G</option>
+<option value="4500">Тренч Dastish Fantastish</option>
+<option value="3500">Кросівки PUMA</option>
+<option value="2500">Навушники SteelSeries</option>
+</select>
+<input type="text" placeholder="Кількість товару" name="quantity" onchange="ListPrice()">
+<span class="Prices">Ціна грн.</span>
+<input type="reset" value="Оновити" onclick="Reset()">
+</form>
+
+<script>
+
+var price1 = document.querySelector(".Prices");
+var sum = 0;
+var valueDoc = 0;
+
+function ListPrice(){
+  if(document.form2.Price.value == "4800"){
+    valueDoc = form2.quantity.value;
+    sum += valueDoc*4800;
+    price1.textContent = "Ціна: " + sum + "грн.";
+  }
+  if(form2.Price.value == "10000"){
+    valueDoc = form2.quantity.value;
+    sum += valueDoc*10000;
+    price1.textContent = "Ціна: " + sum + "грн.";
+  }
+  if(form2.Price.value == "4500"){
+    valueDoc = form2.quantity.value;
+    sum += valueDoc*4500;
+    price1.textContent = "Ціна: " + sum + "грн.";
+  }
+  if(form2.Price.value == "3500"){
+    valueDoc = form2.quantity.value;
+    sum += valueDoc*3500;
+    price1.textContent = "Ціна: " + sum + "грн.";
+  }
+  if(form2.Price.value == "2500"){
+    valueDoc = form2.quantity.value;
+    sum += valueDoc*2500;
+    price1.textContent = "Ціна: " + sum + "грн.";
+  }
+}
+
+function Reset(){
+  price1.textContent = "Ціна грн.";
+  sum = 0;
+  valueDoc = 0;
+}
+
+</script>
+
+
+<div>
+<a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+<a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+<a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+</div>
+
+</body>
+</html>

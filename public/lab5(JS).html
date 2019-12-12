@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 4.5</title>
+
+<style>
+  body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+</style>
+</head>
+<body>
+<h1>Лабораторна робота 4.5</h1>
+<h3> Завдання 1 </h3>
+<p>  Написати сценарій, який демонструє зміну розмірів і положення на
+сторінці горизонтальної лінії  </p>
+
+<hr id="gorizontal_line" width="300" color="black" align="center"></hr><br>
+<form name="form1">
+<input type="radio" name="polojen1" value=left>left<br>
+<input type="radio" name="polojen1" checked value=center>center<br>
+<input type="radio" name="polojen1" value=right>right<br>
+<input type="button" value="Змінити положення" onclick="poloj(form1)"><br>
+</form>
+
+<form name="form2">
+
+<p><input type="text" name="rozmir" placeholder="Введіть розмір лінії"> px <br>
+<input type="button" name="button2" value="Змінити розмір" onclick="widthh(form2)"></p>
+
+</form>
+
+<script>
+function poloj(obj){
+  var a = document.getElementById('gorizontal_line');
+for(var i = 0; i<3;i++){
+  if(obj.elements[i].checked){
+  a.align = obj.elements[i].value;
+    break;
+  }
+}
+}
+
+function widthh(obj){
+var b = document.form2.rozmir.value;
+var a = document.getElementById('gorizontal_line');
+if(b<0){
+  alert("Введіть додатнє значення!");
+}
+else
+  a.width = b;
+}
+</script>
+
+<h3> Завдання 2 </h3>
+<p>   Розробити анкету, що визначає стать, вік, сімейне положення особи, і
+передає ці дані в скрипт  </p>
+
+<form name="form3">
+<p>Стать: <br>
+<input type="radio" name="sex" checked value="Чоловік">Чоловік<br>
+<input type="radio" name="sex" value="Жінка">Жінка<br>
+</p>
+<p> Вік:
+<input type="text" name="age" placeholder="Введіть вік">
+</p>
+<p> Сімейне положення:<br>
+<input type="radio" name="status" checked value="У шлюбі">У шлюбі<br>
+<input type="radio" name="status" value="Неодружений">Неодружений<br>
+</p>
+<input type="button" name="result"  value="Вивести інформацію" onclick="anket(form3)">
+</form>
+
+<script>
+  function anket(obj){
+    var a;
+    for(var i = 0; i < 2; i++){
+      if(obj.elements[i].checked){
+        a = obj.elements[i].value;
+        break;
+      }
+    }
+    var b = obj.age.value;
+    var c;
+    for(var i = 3; i < 5; i++){
+      if(obj.elements[i].checked){
+        c = obj.elements[i].value;
+        break;
+      }
+    }
+    alert("Стать: " + a + "\nВік: " + b + "\nСімейне положення: " + c);
+  }
+</script>
+
+<div>
+<a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+<a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+<a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+</div>
+
+</body>
+</html>

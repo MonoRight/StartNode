@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run",
-    "lint": "eslint .",
+    "lint": "eslint -ignore-path .gitignore .",
     "build": "index.js"
   },
   "repository": {
@@ -27,5 +27,11 @@
     "husky": "^3.0.9",
     "mocha": "^6.2.2",
     "prettier": "^1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "npm run prettier",
+      "prepush": "npm run test"
+      }
   }
 }

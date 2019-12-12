@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 4.9</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Лабораторна робота 4.9</h1>
+  <h3> Завдання 1 </h3>
+  <p>Написати сценарій, який за заданою датою визначає номер тижня в
+році.</p>
+<form namr="form1">
+<input type="text" class="date" placeholder="рррр-мм-дд" onchange="showWeekNum()">
+<input type="reset" value="Обновить">
+		<p class="result1">Номер тижня: </p>
+  </form>
+
+<script>
+function showWeekNum() {
+				var currentDateTime = new Date(Date.parse(document.querySelector('.date').value));
+				var newYear = new Date(currentDateTime.getFullYear(), 0, 1);
+				var dayOfWeekNewYear = newYear.getDay()-1;
+				if(dayOfWeekNewYear == -1) dayOfWeekNewYear = 6;
+				var startTimeOfCurrentYear = newYear.getTime();
+				var currentTime = currentDateTime.getTime();
+				var pastTimeOfStartCurrentYear = currentTime - startTimeOfCurrentYear;
+				var hourOfMillisecs = 3600000;
+				var hoursOfOneWeek = 168;
+				console.log(pastTimeOfStartCurrentYear+" "+hoursOfOneWeek / hourOfMillisecs);
+				var res = document.querySelector(".result1");
+				res.textContent = "Номер тижня: " + Math.ceil((pastTimeOfStartCurrentYear+86400000*dayOfWeekNewYear) / hourOfMillisecs / hoursOfOneWeek);
+			}
+</script>
+
+<h3> Завдання 2 </h3>
+<p>  Написати сценарій, який за датою народження особи визначає знак зодіаку.    </p>
+<form name="form2">
+		<input type="text" class="birthday" placeholder="рррр-мм-дд" onchange="showZodiak()">
+    <input type="reset" value="Обновить">
+		<p class="result2">Знак зодіаку: </p>
+</form>
+
+<script>
+function showZodiak() {
+				var birthday = new Date(Date.parse(document.querySelector('.birthday').value)),
+				bmonth = birthday.getMonth()+1,
+				bday = birthday.getDate(),
+				zodiak;
+
+				if(+bday>21) bmonth++;
+				switch(bmonth) {
+					case 1: zodiak = "Козеріг";break;
+					case 2: zodiak = "Водолій";break;
+					case 3: zodiak = "Риби";break;
+					case 4: zodiak = "Овен";break;
+					case 5: zodiak = "Телець";break;
+					case 6: zodiak = "Близнюки";break;
+					case 7: zodiak = "Рак";break;
+					case 8: zodiak = "Лев";break;
+					case 9: zodiak = "Діва";break;
+					case 10: zodiak = "Терези";break;
+					case 11: zodiak = "Скорпіон";break;
+					case 12: zodiak = "Стрілець";break;
+					default: zodiak = "Неправильна дата";break;
+				}
+
+				var res = document.querySelector(".result2");
+				res.textContent = "Ваш знак зодіаку: "+zodiak;
+			}
+</script>
+
+<h3> Завдання 3 </h3>
+<p>  В східному календарі є 60-річний цикл із п’яти 12-річних підциклів.
+			Підцикли позначаються кольорами: зелений, червоний, жовтий, білий, чорний.
+			В кожному підциклі роки мають назви тварин: пацюка, корови, тигра, зайця,
+			дракона, змії, коня, вівці, мавпи, курки, собаки і свині. Наприклад, 1984 рік - рік
+			зеленого пацюка - є початком чергового цикла. Написати сценарій, який за
+			заданою датою визначає назву року за східним календарем.   </p>
+      <form name="form3">
+			<input type="text" class="datename" placeholder="рррр-мм-дд" onchange="showYearName()">
+      <input type="reset" value="Обновить">
+			<p class="result3">Назва року за східним календарем: </p>
+    </form>
+
+<script>
+function showYearName() {
+				var date = new Date(Date.parse(document.querySelector('.datename').value)),
+				sixtyyear = (Math.floor((date.getFullYear() - 4)/12))%5 + 1,
+				twelveyear = date.getFullYear()%12 + 1,
+				color, animal;
+
+				switch(sixtyyear) {
+					case 1: color = "зеленого(ї)";break;
+					case 2: color = "червоного(ї)";break;
+					case 3: color = "жовтого(ї)";break;
+					case 4: color = "білого(ї)";break;
+					case 5: color = "чорного(ї)";break;
+				}
+
+				switch(twelveyear) {
+					case 1: animal = "Мавпи";break;
+					case 2: animal = "Півня";break;
+					case 3: animal = "Собаки";break;
+					case 4: animal = "Свині";break;
+					case 5: animal = "Пацюка";break;
+					case 6: animal = "Бика";break;
+					case 7: animal = "Тигра";break;
+					case 8: animal = "Зайця";break;
+					case 9: animal = "Дракона";break;
+					case 10: animal = "Змії";break;
+					case 11: animal = "Коня";break;
+					case 12: animal = "Вівці";break;
+				}
+
+				var res = document.querySelector(".result3");
+				res.textContent = "Назва року за східним календарем: рік "+color+" "+animal;
+			}
+</script>
+
+	<div>
+        <a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+        <a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+        <a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+        <a href="lab10(JS).html">	Lab10	</a><a href="lab11(JS).html">   Lab11   </a><a href="lab12(JS).html">	Lab12	</a>
+    </div>
+
+</body>
+</html>

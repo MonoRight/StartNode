@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 4.3</title>
+
+<style>
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
+</head>
+
+<body>
+<h1>Лабораторна робота 4.3</h1>
+<h3> Завдання 1 </h3>
+<p>Написати сценарій визначення кількості максимальних чисел для
+введеної послідовності із п’яти чисел.</p>
+<form name="form1">
+<p>Введіть 5 чисел:
+<input type="text" name="n1" placeholder="Число_1">
+<input type="text" name="n2" placeholder="Число_2">
+<input type="text" name="n3" placeholder="Число_3">
+<input type="text" name="n4" placeholder="Число_4">
+<input type="text" name="n5" placeholder="Число_5">
+</p>
+<p style="text-align: center"><input type="button" value="Розрахувати" onclick="Maximum([document.form1.n1.value, document.form1.n2.value, document.form1.n3.value, document.form1.n4.value, document.form1.n5.value])">
+<p class="result1" style="text-align: center">Кількість максимальних чисел:</p>
+</form>
+
+<script>
+function Maximum(mass){
+  for(var i=0;i<5;i++){
+    if(!mass[i]) return 0;
+  }
+  var res = document.querySelector('.result1');
+  var counter = 0;
+  var maximum = Math.max(mass[0],mass[1],mass[2],mass[3],mass[4]);
+
+  for(var i=0;i<5;i++){
+    if(mass[i]==maximum) counter++;
+  }
+  res.textContent = "Кількість максимальних чисел: " + counter;
+}
+</script>
+
+<h3> Завдання 2 </h3>
+<p>Написати сценарій визначення можливості побудови трикутника із
+заданими довжинами сторін.</p>
+<form name="form2">
+  <p>Введіть довжини сторін трикутника:
+<input type="text" name="a1" placeholder="Введіть довжину першої сторони">
+<input type="text" name="a2" placeholder="Введіть довжину другої сторони">
+<input type="text" name="a3" placeholder="Введіть довжину третьої сторони">
+</p>
+<p style="text-align: center"><input type="button" value="Розрахувати" onclick="triangular(document.form2.a1.value, document.form2.a2.value, document.form2.a3.value)"></p>
+<p class="result2" style="text-align: center">Трикутник існує?</p>
+</form>
+
+<script>
+function triangular(a1,a2,a3){
+  var res = document.querySelector('.result2');
+  if(((a1+a2)>a3) && ((a1+a3)>a2) && ((a2+a3)>a1))
+    res.textContent  = "Так існує";
+  else
+    res.textContent  = "Ні не існує";
+}
+</script>
+
+<h3> Завдання 3 </h3>
+<p>Встановити, до якої із чвертей системи координат належить точка,
+задана координатами на площині.</p>
+<form name="form3">
+<p>Введіть координати точки:
+<input type="text" name="coord1" placeholder="Координата Х">
+<input type="text" name="coord2" placeholder="Координата Y">
+</p>
+<p style="text-align:center"><input type="button" value="Розрахувати" onclick="coordinates(document.form3.coord1.value, document.form3.coord2.value)"></p>
+<p class="result3" style="text-align: center">Точка належить до </p>
+</form>
+
+<script>
+function coordinates(a1,a2){
+  var res = document.querySelector('.result3');
+if(a1==0 && a2==0){
+  res.textContent = "Точка належить до початку координат.";
+}
+if(a1>0 && a2>0){
+  res.textContent = "Точка належить до першої четверті.";
+}
+if(a1>0 && a2<0){
+  res.textContent = "Точка належить до четвертої четверті.";
+}
+if(a1<0 && a2>0){
+  res.textContent = "Точка належить до другої четверті.";
+}
+if(a1<0 && a2<0){
+  res.textContent = "Точка належить до третьої четверті.";
+}
+}
+</script>
+
+<div>
+<a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+<a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+<a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+</div>
+
+</body>
+</html>

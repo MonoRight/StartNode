@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 4.10</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+    <h1>Лабораторна робота 4.10</h1>
+    <h3> Завдання 1 </h3>
+    <p> Слова в заданому тексті розділюються пробілами. Написати програму обчислення кількості слів у тексті.</p>
+    <form name="form1">
+        <textarea name="text1" rows="8" cols="40" placeholder="Введіть текст: "></textarea><hr>
+        <input type="button" value="Розрахувати" onclick="spaces()">
+        <input type="text" name="res1" placeholder="Результат: ">
+        <input type="reset" value="Обнулити">
+    </form>
+
+    <script>
+        function spaces(){
+            var col = 0;
+            var texts = form1.text1.value;
+
+            for(var i = 0; i < texts.length; i++){
+                if(texts.charAt(i) == " "){
+                    col++;
+                }
+            }
+            col++;
+            form1.res1.value = col;
+        }
+    </script>
+
+    <h3> Завдання 2 </h3>
+    <p>  Написати програму, в якій всі слова K замінюються словом L, де K і L
+            - задані слова, можливо різної довжини.</p>
+    <form name="form2">
+        <textarea name="text2" rows="8" cols="40" placeholder="Введіть текст: "></textarea><hr>
+        <input type="text" name="wordK" placeholder="Слово 'K'"><hr>
+        <input type="text" name="wordL" placeholder="Слово 'L'"><hr>
+        <input type="button" value="Замінити" onclick="swapwords()">
+        <input type="reset" value="Обнулити">
+    </form>
+
+    <script>
+        function swapwords(){
+            var text = form2.text2.value.split(" ");
+            var wordK = form2.wordK.value;
+            var wordL = form2.wordL.value;
+
+            for(var i = 0; i < text.length; i++){
+                if(text[i]== wordK)
+                {
+                    text[i] = wordL;
+                }
+            }
+
+            form2.text2.value = text.join(" ");
+        }
+    </script>
+
+    <h3> Завдання 3 </h3>
+    <p>  Написати програму, яка замінює всі підряд ідучі пробіли на один.</p>
+
+    <form name="form3">
+        <input type="text" name="space" placeholder="Введіть текст: ">
+        <input type="button" value="Замінити" onclick="onespace()">
+        <input type="reset" value="Обнулити">
+    </form>
+
+    <script>
+        function onespace(){
+            var result = form3.space.value.split(" ");
+
+            for(var i = 0; i<result.length;i++){
+                if(result[i]== ""){
+                    result.splice(i,1);
+                    i--;
+                }
+            }
+
+            form3.space.value = result.join(" ");
+        }
+    </script>
+
+    <div>
+        <a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+        <a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+        <a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+        <a href="lab10(JS).html">	Lab10	</a><a href="lab11(JS).html">   Lab11   </a><a href="lab12(JS).html">	Lab12	</a>
+    </div>
+
+</body>
+</html>

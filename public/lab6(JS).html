@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 4.6</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+  </style>
+</head>
+<body>
+<h1>Лабораторна робота 4.6</h1>
+<h3> Завдання 1 </h3>
+<p>  Написати сценарій обробки анкети слухача курсів. Користувач може
+обрати із списку курсів конкретний курс, його тривалість, мову роботи з
+викладачем, форму звітності. Залежно від цих параметрів визначається вартість
+окремого курсу і вартість всього навчання </p>
+<h3>Анкета слухача курсів</h3>
+
+<form name="form1">
+  <p> Курс: <br>
+<input type="radio" name="course1" value="1000"> Для дітей <br>
+<input type="radio" name="course1" value="500"> Для початківців <br>
+<input type="radio" name="course1" value="1500"> Для ознайомленних <br>
+<input type="radio" name="course1" value="2200"> Для  професіоналів<br>
+</p>
+<p> Тривалість курсу: <br>
+<input type="radio" name="course2" value="1"> 1 місяць <br>
+<input type="radio" name="course2" value="2.7"> 3 місяці <br>
+<input type="radio" name="course2" value="5"> пів року <br>
+<input type="radio" name="course2" value="10"> рік <br>
+</p>
+<p> Мова роботи з викладачем: <br>
+<input type="checkbox" name="ukrainian" value="1"> Українська <br>
+<input type="checkbox" name="russian" value="1"> Російська <br>
+<input type="checkbox" name="english" value="2"> Англійська <br>
+<input type="checkbox" name="french" value="2"> Французька <br>
+<input type="checkbox" name="germany" value="3"> Китайська <br>
+</p>
+<p> Форма звітності: <br>
+<input type="radio" name="zvit" value="online"> Онлайн <br>
+<input type="radio" name="zvit" value="byside"> В присутності <br>
+</p>
+<input type="button" value="Відправити анкету" onclick="Anketa(form1)">
+</form>
+
+<script>
+function Anketa(obj){
+  var price = 0;
+  for(var i = 0; i < 4; i++){
+    if(obj.elements[i].checked){
+      price = obj.elements[i].value;
+      break;
+    }
+  }
+  for(var i = 4; i < 8; i++){
+    if(obj.elements[i].checked){
+      price = price*obj.elements[i].value;
+      break;
+    }
+  }
+  for(var i = 8; i < 13; i++){
+    if(obj.elements[i].checked){
+      price = price*obj.elements[i].value;
+    }
+  }
+  alert("Вартість курсу: " + price + "грн.");
+}
+</script>
+
+<div>
+<a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+<a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+<a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+</div>
+
+
+</body>
+</html>

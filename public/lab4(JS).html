@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lab 4.4</title>
+
+<style>
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+span{
+  background-color: #DEB887;
+  padding:20px;
+  padding-left: 45px;
+  padding-right: 45px;
+  border: 1px solid black;
+}
+</style>
+</head>
+
+<body>
+<h1>Лабораторна робота 4.4</h1>
+<h3> Завдання 1 </h3>
+<p> Написати сценарій вибору із трьох зображень одного, яке вставляється
+нижче цих трьох.</p>
+
+<div>
+<img src="1.jpg" width="300" name="img1">
+<img src="2.jpg" width="300" name="img2">
+<img src="3.jpg" width="300" name="img3">
+</div>
+<img src="back.png" width="300" name="img4">
+
+<form name="form1">
+<input name="image" type="text" placeholder="Номер зображення">
+<input type="button" value="Змінити положення" onclick="images1(document.form1.image.value)">
+</form>
+
+<script>
+function images1(swapper){
+  if(swapper<1 || swapper>3){
+    alert("Введіть значення 1,2 чи 3!");
+  }
+  else{
+    var temp = document.images[swapper-1].src;
+    document.images[swapper-1].src = document.images[3].src;
+    document.images[3].src = temp;
+  }
+}
+</script>
+
+<h3> Завдання 2 </h3>
+<p> Написати сценарій картинки з "ефектом наближення", тобто
+збільшення розмірів як реакція на попадання курсора в поле зображення
+(використовувати властивості width і height).</p>
+
+<img src="4.jpg" width="300" name="img5" onmouseover="increase(1)" onmouseout="increase(0)">
+
+<script>
+function increase(variable){
+  if(variable==0){
+    document.images[4].width=300;
+  }
+  if(variable==1){
+    document.images[4].width=500;
+  }
+}
+</script>
+
+<h3> Завдання 3 </h3>
+<p>  Написати сценарій графічного горизонтального меню з появою стрілки
+над пунктом, на який наведено курсор.</p>
+
+<div>
+<img src="pin.png" width="100" name="pin1" style="opacity:0;">
+<img src="pin.png" width="100" name="pin2" style="opacity:0;">
+<img src="pin.png" width="100" name="pin3" style="opacity:0;">
+<img src="pin.png" width="100" name="pin4" style="opacity:0;">
+</div>
+
+<div>
+<span onmouseover="opacitys(1)" onmouseout="opacitys(0)"> 1 </span>
+<span onmouseover="opacitys(2)" onmouseout="opacitys(0)"> 2 </span>
+<span onmouseover="opacitys(3)" onmouseout="opacitys(0)"> 3 </span>
+<span onmouseover="opacitys(4)" onmouseout="opacitys(0)"> 4 </span>
+</div>
+
+<script>
+function opacitys(values){
+  if(values==1){
+    document.images[5].style.opacity = 1;
+  }
+  if(values==2){
+    document.images[6].style.opacity = 1;
+  }
+  if(values==3){
+    document.images[7].style.opacity = 1;
+  }
+  if(values==4){
+    document.images[8].style.opacity = 1;
+  }
+  if(values==0){
+    document.images[5].style.opacity = document.images[6].style.opacity = document.images[7].style.opacity = document.images[8].style.opacity = 0;
+  }
+
+}
+</script>
+
+<div>
+<a href="lab1(JS).html">  Lab1  </a><a href="lab2(JS).html">  Lab2  </a><a href="lab3(JS).html">  Lab3  </a>
+<a href="lab4(JS).html">  Lab4  </a><a href="lab5(JS).html">  Lab5  </a><a href="lab6(JS).html">  Lab6  </a>
+<a href="lab7(JS).html">  Lab7  </a><a href="lab8(JS).html">  lab8  </a><a href="lab9(JS).html">  Lab9  </a>
+</div>
+
+</body>
+</html>
